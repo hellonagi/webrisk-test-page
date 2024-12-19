@@ -6,94 +6,16 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-<h1>(Safe) Safe Browsing Testing Links </h1>
+<h1>Web Risk APIテストページ/h1>
 
-<p>Webpage Warnings</p>
+<p>危険なリンク</p>
 <ol>
         <!-- Note: if changing HTML node IDs, please first see internal issue b/147323056 -->
-        <li>[A/W/M/L/C] Should show a phishing warning: <a id="phishing-webpage" href="//testsafebrowsing.appspot.com/s/phishing.html">link</a></li>
-        <li>[A/W/M/L/C/D] Should show a malware warning: <a id="malware-webpage" href="//testsafebrowsing.appspot.com/s/malware.html">link</a></li>
-        <li>[Deprecated] Should show a malware warning due to a bad subresource: <a id="malware-iframe-webpage" href="//testsafebrowsing.appspot.com/s/malware_in_iframe.html">link</a></li>
-        <li>[W/M/L/C] Should show a unwanted software warning: <a id="unwanted-software-webpage" href="//testsafebrowsing.appspot.com/s/unwanted.html">link</a></li>
-        <li>[Deprecated] Should show a malware warning due to bad assets: [
-          <a id="malware-asset-small-img" href="//testsafebrowsing.appspot.com/s/image_small.html">small img</a>,
-          <a id="malware-asset-medium-img" href="//testsafebrowsing.appspot.com/s/image_medium.html">medium img</a>,
-          <a id="malware-asset-large-img" href="//testsafebrowsing.appspot.com/s/image_large.html">large img</a>,
-          <a id="malware-asset-dynamic-img" href="//testsafebrowsing.appspot.com/s/image_dynamic.html">dynamically loaded img</a>,
-          <a id="malware-asset-css" href="//testsafebrowsing.appspot.com/s/bad_css.html">css</a>,
-          <a id="malware-asset-js" href="//testsafebrowsing.appspot.com/s/bad_javascript.html">js</a>]</li>
-        <li>[A/W/M/L/C] Should show a billing warning: <a id="billing-webpage" href="https://testsafebrowsing.appspot.com/s/trick_to_bill.html">link</a></li>
+        <li>フィッシング SOCIAL_ENGINEERING<a id="phishing-webpage" href="//testsafebrowsing.appspot.com/s/phishing.html">link</a></li>
+        <li>マルウェア MALWARE<a id="malware-webpage" href="//testsafebrowsing.appspot.com/s/malware.html">link</a></li>
+        <li>望ましくないソフトウェア UNWANTED_SOFTWARE<a id="unwanted-software-webpage" href="//testsafebrowsing.appspot.com/s/unwanted.html">link</a></li>
+	<li>広域のSOCIAL_ENGINEERING: SOCIAL_ENGINEERING_EXTENDED_COVERAGE<a href="//testsafebrowsing.appspot.com/s/social_engineering_extended_coverage.html">link</a></li>
 </ol>
-
-<p>Desktop Download Warnings</p>
-<ol>
-	<li>Should show a "malicious" warning, based on content: <a href="//testsafebrowsing.appspot.com/s/content.exe">link</a> [W/M] </li>
-	<li>Should show a "malicious" warning, based on content with https: <a href="https://testsafebrowsing.appspot.com/s/content.exe">link</a> [W/M] </li>
-	<li>Should show a "dangerous host" warning: <a href="https://testsafebrowsing.appspot.com/s/badrep.exe">link</a> [W] </li>
-	<li>Should show an "uncommon" warning, for .exe: <a href="//testsafebrowsing.appspot.com/s/unknown.exe">link</a> [W] </li>
-	<li>Should show an "uncommon" warning, for .zip: <a href="//testsafebrowsing.appspot.com/s/uncommon.zip">link</a> [W] </li>
-	<li>Should show an "uncommon" warning, for https .exe: <a href="https://testsafebrowsing.appspot.com/s/unknown.exe">link</a> [W] </li>
-  <li>Should show an "potentially unwanted app" warning, for .exe: <a href="//testsafebrowsing.appspot.com/s/pua.exe">link</a> [W] </li>
-  <li>Should show a "cookie theft" warning, for .exe: <a href="//testsafebrowsing.appspot.com/s/cookie_theft.exe">link</a> [W/M/L/C] </li>
-  <li>Should show a uncommon warning from Safebrowsing and then "malicious" warning after deep scanning: <a href="https://testsafebrowsing.appspot.com/s/bad_app_file_on_scan.exe">link</a></li>
-	<li>Should show a "malicious" warning if Chrome supports encrypted zips: <a href="https://testsafebrowsing.appspot.com/s/zip_password_1234.zip">link</a></li>
-</ol>
-
-<p>Mobile Download Warnings</p>
-<ol>
-	<li>Should show a harmful file warning on Android: <a href="//testsafebrowsing.appspot.com/s/unknown.apk">link</a></li>
-</ol>
-
-<p>IOS/OSX Warnings</p>
-<ol>
-  <li>Should show malware warning (IOS): <a href="//testsafebrowsing.appspot.com/apiv4/IOS/MALWARE/URL/">link</a></li>
-  <li>Should show social engineering warning (IOS): <a href="//testsafebrowsing.appspot.com/apiv4/IOS/SOCIAL_ENGINEERING_INTERNAL/URL/">link</a></li>
-  <li>Should show malware warning (OSX): <a href="//testsafebrowsing.appspot.com/apiv4/OSX/MALWARE/URL/">link</a></li>
-  <li>Should show social engineering warning (OSX): <a href="//testsafebrowsing.appspot.com/apiv4/OSX/SOCIAL_ENGINEERING_INTERNAL/URL/">link</a></li>
-</ol>
-
-<p>Permissions Blocklisting</p>
-<ol>
-  <li>Should autoblock notification request made on page load: <a href="https://testsafebrowsing.appspot.com/s/notif_pageload.html">link</a></li>
-  <li>Should autoblock geolocation request made on button click: <a href="https://testsafebrowsing.appspot.com/s/geoloc_click.html">link</a></li>
-  <li>Should autoblock notification request made on page load, and geolocation request made after a delay: <a href="https://testsafebrowsing.appspot.com/s/notif_geoloc_delay.html">link</a></li>
-  <li>Should autoblock all media requests made in a batch (10): <a href="https://testsafebrowsing.appspot.com/s/media_batch.html">link</a></li>
-  <li>Should not be autoblocked: <a href="https://testsafebrowsing.appspot.com/s/midi_click.html">link</a></li>
-</ol>
-
-<p>Password Protection</p>
-<ol>
- <li>Should trigger phishing warning on password reuse: <a href="https://testsafebrowsing.appspot.com/s/bad_login.html">link</a></li>
-</ol>
-
-<p>Low Reputation</p>
-<ol>
- <li>Should trigger phishing warning on password reuse: <a href="https://testsafebrowsing.appspot.com/s/low_rep_login.html">link</a></li>
- <li>Should return the SUSPICIOUS level: <a href="https://testsafebrowsing.appspot.com/s/suspicious.html">link</a></li>
-</ol>
-
-<p>Client Side Detection</p>
-<ol>
-  <li>Should create a Client Side Detection request: <a href="https://testsafebrowsing.appspot.com/s/force_csd.html">link</a></li>
-</ol>
-
-<p>Desktop DLP Warnings</p>
-<ol>
-  <li>Should trigger the 1 CC rule: <a href="//testsafebrowsing.appspot.com/s/file1.txt" download>link</a></li>
-	<li>Should trigger the 10 SSN rule: <a href="//testsafebrowsing.appspot.com/s/file2.txt" download>link</a></li>
-	<li>Should trigger the 1000 email addresses rule: <a href="//testsafebrowsing.appspot.com/s/export_report1.csv" download>link</a></li>
-</ol>
-
-<p id="restricted-content">Restricted Content Blocking</p>
-<ol>
-  <li>Should trigger the restricted content warning: <a href="//testsafebrowsing.appspot.com/s/restricted_content.html">link</a></li>
-  <li>Should trigger the restricted content warning due to unsafe iframe: <a href="//testsafebrowsing.appspot.com/s/restricted_content_in_iframe.html">link</a></li>
-  <li>Should trigger the restricted content warning due to unsafe image: <a href="//testsafebrowsing.appspot.com/s/restricted_content_in_image.html">link</a></li>
-</ol>
-
-<p>
-<i>Key: Windows, MacOS, Linux, ChromeOS, Android, DataSaver</i>
-</p>
 
 </body>
 </html>
